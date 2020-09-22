@@ -19,12 +19,12 @@ cat << EOF > /usr/local/etc/v2ray/config.json
             "port": $PORT,
             "protocol": "vless",
             "settings": {
+                "decryption": "none",
                 "clients": [
-                    {
-                        "id": "$UUID",
-                    }
-                ],
-                "disableInsecureEncryption": true
+                {
+                  "id": "$UUID"
+                }
+              ]
             },
             "streamSettings": {
                 "network": "ws"
@@ -32,10 +32,11 @@ cat << EOF > /usr/local/etc/v2ray/config.json
         }
     ],
     "outbounds": [
-        {
-            "protocol": "freedom"
-        }
-    ]
+      {
+        "protocol": "freedom",
+        "settings": {}
+      }
+   ]
 }
 EOF
 
