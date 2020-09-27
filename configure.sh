@@ -19,12 +19,13 @@ cat << EOF > /usr/local/etc/v2ray/config.json
             "port": $PORT,
             "protocol": "vless",
             "settings": {
-                "decryption": "none",
                 "clients": [
-                {
-                  "id": "$UUID"
-                }
-              ]
+                    {
+                        "id": "$UUID",
+                        "alterId": 0
+                    }
+                ],
+                "disableInsecureEncryption": true
             },
             "streamSettings": {
                 "network": "ws"
